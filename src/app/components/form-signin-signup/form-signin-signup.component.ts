@@ -16,8 +16,8 @@ export class FormSigninSignupComponent implements OnInit {
   private _userState: string;
   client: ClientModel = new ClientModel();
   authenticatedUser: AuthenticatedUserModel = new AuthenticatedUserModel();
+  formSign: FormGroup;
 
-  formSign!: FormGroup;
   // va nous permettre de trier les champs utilisés ou non selon l'état et de les afficher
   public get userState(): boolean {
     return this._userState === Const.SIGNUP;
@@ -58,7 +58,7 @@ export class FormSigninSignupComponent implements OnInit {
         break;
       case Const.SIGNIN:
         this.createAuthenticatedUser();
-        this._autenticationService.connecterClient(this.authenticatedUser).subscribe();
+        this._autenticationService.connecterClient(this.authenticatedUser).subscribe(data => sessionStorage.setItem('utilisateur', data.id));
         this._route.navigate(['/dashboard']);
 
         break;

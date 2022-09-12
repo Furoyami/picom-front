@@ -9,7 +9,9 @@ import { HomePageModule } from './pages/home-page/home-page.module';
 import { AuthenticationPageModule } from './pages/authentication-page/authentication-page.module';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardClientModule } from './pages/dashboard-client/dashboard-client.module';
-import { CarouselModule } from './components/carousel/carousel.module';
+import { AjoutAnnonceModule } from './components/ajout-annonce/ajout-annonce.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { CarouselModule } from './components/carousel/carousel.module';
     AuthenticationPageModule,
     HttpClientModule,
     DashboardClientModule,
-    CarouselModule
+    AjoutAnnonceModule,
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

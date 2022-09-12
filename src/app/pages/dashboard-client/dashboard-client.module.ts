@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashboardClientComponent } from './dashboard-client.component';
-import { CarouselModule } from 'src/app/components/carousel/carousel.module';
+import { AjoutAnnonceModule } from 'src/app/components/ajout-annonce/ajout-annonce.module';
 
 
 
@@ -11,7 +11,7 @@ import { CarouselModule } from 'src/app/components/carousel/carousel.module';
   ],
   imports: [
     CommonModule,
-    CarouselModule
+    AjoutAnnonceModule
   ],
   exports: [
     DashboardClientComponent

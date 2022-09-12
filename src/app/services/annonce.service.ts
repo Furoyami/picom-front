@@ -19,7 +19,7 @@ export class AnnonceService {
   constructor(private http: HttpClient) { }
 
   public recupererAnnonces(): Observable<AnnonceModel[]> {
-    return this.http.get<AnnonceModel[]>(this.URL + '/annonces', this.httpOptions);
+    return this.http.get<AnnonceModel[]>(`${this.URL}` + '/annonces', this.httpOptions);
   }
 
   public enregistrerAnnonce(annonce: AnnonceModel): Observable<AnnonceModel> {
