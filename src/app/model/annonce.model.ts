@@ -9,7 +9,7 @@ export class AnnonceModel {
     cryptogramme: string;
     montantRegleEnEuros: number;
 
-    idClient: number;
+    client: number;
     lstZones: number[];
-    lstTrancheHoraire: number[];
+    lstTrancheHoraires: number[];
 }

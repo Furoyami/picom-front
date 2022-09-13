@@ -1,0 +1,51 @@
+.dashboard {
+    height: 92vh;
+    background-color: var(--white);
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+h2 {
+    padding: 2rem 0px;
+    text-align: center;
+}
+
+h4 {
+    margin: auto;
+}
+
+.dashboard__annonces {
+    height: 420px;
+    border-top: 5px solid var(--red);
+    border-bottom: 5px solid var(--red);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    overflow-x: scroll;
+}
+
+.annonce {
+    height: 300px;
+    width: 300px;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    margin-right: 2rem;
+    border: 3px solid var(--sand);
+    border-radius: 5px;
+    overflow: scroll;
+}
+
+span {
+    margin-right: 10px;
+    font-size: 30px;
+}
+
+.btn {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+th{
+    padding: 15px;
+}

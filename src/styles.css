@@ -1,4 +1,75 @@
 /* You can add global styles to this file, and also import other style files */
+/*colors variable*/
+:root {
+    --red: #EA5455;
+    --redLogo: #A7425C;
+    --white: #F7F7FF;
+    --sand: #F2D0A4;
+    --blueGreen: #3F826D;
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body {
+    height: 100vh;
+}
+
+.container-main {
+    height: 92vh;
+    margin: 0;
+    padding: 0;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    min-width: 180px;
+    font-size: 22px;
+}
+
+.button-primary {
+    border-radius: 5px;
+    background-color: var(--red);
+    border: 2px solid var(--red);
+    color: var(--white);
+}
+
+.button-primary:hover {
+    background-color: var(--redLogo);
+    border: 2px solid var(--redLogo);
+}
+
+.button-secondary {
+    border-radius: 5px;
+    background-color: var(--white);
+    border: 2px solid var(--red);
+    color: var(--black);
+}
+
+.button-secondary:hover {
+    background-color: var(--white);
+    border: 2px solid var(--redLogo);
+    color: var(--redLogo);
+}
+
+/* Scrollbar */
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: var(--white);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #212529;
+    border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

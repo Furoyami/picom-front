@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashboardClientComponent } from './dashboard-client.component';
 import { AjoutAnnonceModule } from 'src/app/components/ajout-annonce/ajout-annonce.module';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -11,7 +12,8 @@ import { AjoutAnnonceModule } from 'src/app/components/ajout-annonce/ajout-annon
   ],
   imports: [
     CommonModule,
-    AjoutAnnonceModule
+    AjoutAnnonceModule,
+    RouterModule
   ],
   exports: [
     DashboardClientComponent

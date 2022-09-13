@@ -28,7 +28,7 @@ import { MaterialModule } from './material.module';
     DashboardClientModule,
     AjoutAnnonceModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

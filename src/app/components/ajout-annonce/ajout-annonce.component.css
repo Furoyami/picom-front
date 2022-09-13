@@ -1,0 +1,10 @@
+.container {
+    height: 92vh;
+    background-color: var(--white);
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.title{
+    font-weight: bold;
+}

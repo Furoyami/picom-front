@@ -1,0 +1,19 @@
+.authentication {
+    display: flex;
+    height: 92vh
+}
+
+.picture {
+    width: 40%;
+    background-image: url(../../../assets/image_connexion.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.form {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white);
+}

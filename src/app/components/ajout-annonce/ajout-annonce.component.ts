@@ -37,22 +37,29 @@ export class AjoutAnnonceComponent implements OnInit {
     this.formAnnonce = this._fb.group({
       dateHeureDebut: new FormControl('', Validators.required),
       contenu: new FormControl('', Validators.required),
-      //ajouter les autres champs
+      numeroCarte: new FormControl(''),
+      anneeExpiration: new FormControl(''),
+      moisExpiration: new FormControl(''),
+      cryptogramme: new FormControl(''),
       lstZones: new FormControl(''),
       lstTrancheHoraires: new FormControl('')
     });
   }
 
   createAnnonce(): AnnonceModel {
-    this.annonce.dateHeureDebut = this.formAnnonce.get('dateHeureDebut').value;
+    this.annonce.dateHeureDebut = new Date(this.formAnnonce.get('dateHeureDebut').value);
     this.annonce.contenu = this.formAnnonce.get('contenu').value;
-    this.annonce.numeroCarte = this.formAnnonce.get('numeroCarte').value;
-    this.annonce.anneeExpiration = this.formAnnonce.get('anneeExpiration').value;
-    this.annonce.moisExpiration = this.formAnnonce.get('moisExpiration').value;
-    this.annonce.cryptogramme = this.formAnnonce.get('cryptogramme').value;
+    this.annonce.numeroCarte = '0000111122223333'; //this.formAnnonce.get('numeroCarte').value;
+    this.annonce.anneeExpiration = 2022; //this.formAnnonce.get('anneeExpiration').value;
+    this.annonce.moisExpiration = '12';//this.formAnnonce.get('moisExpiration').value;
+    this.annonce.cryptogramme = '111';//this.formAnnonce.get('cryptogramme').value;
     this.annonce.montantRegleEnEuros = 100;
 
-    this.annonce.idClient = Number(sessionStorage.getItem('utilisateur'));
+    this.annonce.client = Number(sessionStorage.getItem('utilisateur'));
+    this.annonce.lstZones = this.formAnnonce.get('lstZones').value;
+    this.annonce.lstTrancheHoraires = this.formAnnonce.get('lstTrancheHoraires').value;
+    console.log(this.annonce.client);
+
 
     return this.annonce;
   }
@@ -61,11 +68,6 @@ export class AjoutAnnonceComponent implements OnInit {
     this.createAnnonce();
     this._annonceService.enregistrerAnnonce(this.annonce).subscribe();
     this._route.navigate(['/dashboard']);
-  }
-
-  test() {
-    console.log(this.formAnnonce);
-
   }
 
 }

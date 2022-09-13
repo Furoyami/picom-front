@@ -1,36 +1,41 @@
-<div class="container d-flex justify-content-center align-middle mt-5">
-    <form class="w-50 " [formGroup]="formAnnonce">
-        <div class="card ">
-            <div class="card-header">Ajouter une annonce</div>
-            <div class="card-body text-center">
-                <div class="input-group">
-                    <div class="input-group-prepend">
+<div class="container">
+    <div class="d-flex justify-content-center align-middle">
+        <form class="annonce w-90 mt-5" [formGroup]="formAnnonce">
+            <div class="card ">
+                <h2 class="card-header">Ajouter une annonce</h2>
+                <div class="card-body text-center">
+                    <div class="input-group">
                         <span class="input-group-text">Contenu de l'annonce</span>
+                        <editor [init]="{
+                                            base_url: '/tinymce', 
+                                            suffix: '.min'       
+                                        }" formControlName="contenu">
+                        </editor>
                     </div>
-                    <textarea class="form-control" aria-label="With textarea" formControlName="contenu"></textarea>
                 </div>
-            </div>
-            <mat-form-field appearance="fill">
-                <mat-label>Zones</mat-label>
-                <mat-select formControlName="lstZones" multiple>
-                    <mat-option *ngFor="let zone of zones" [value]="zone.id">{{zone.nom}}</mat-option>
-                </mat-select>
-            </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label class="title">Zones</mat-label>
+                    <mat-select formControlName="lstZones" multiple>
+                        <mat-option *ngFor="let zone of zones" [value]="zone.id">{{zone.nom}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
 
-            <div class="card-header">Période de l'annonce</div>
-            <div class="card-body text-center">
-                <label for="startDate">Date et Heure de début diffusion</label>
-                <input id="startDate" class="form-control" type="date" formControlName="dateHeureDebut" />
-            </div>
+                <div class="card-header title">Période de l'annonce</div>
+                <div class="card-body text-center">
+                    <label for="startDate">Date et Heure de début diffusion</label>
+                    <input id="startDate" class="form-control" type="date" formControlName="dateHeureDebut" />
+                </div>
 
-            <mat-form-field appearance="fill">
-                <mat-label>Tranche(s) Horaire(s)</mat-label>
-                <mat-select formControlName="lstTrancheHoraires" multiple>
-                    <mat-option *ngFor="let trancheHoraire of trancheHoraires" [value]="trancheHoraire.id">
-                        {{trancheHoraire.debut}}h</mat-option>
-                </mat-select>
-            </mat-form-field>
-        </div>
-        <button type="submit" class="btn btn-success w-100 mt-3" (click)="test()">Sauvegarder l'annonce</button>
-    </form>
+                <mat-form-field appearance="fill">
+                    <mat-label class="title">Tranche(s) Horaire(s)</mat-label>
+                    <mat-select formControlName="lstTrancheHoraires" multiple>
+                        <mat-option *ngFor="let trancheHoraire of trancheHoraires" [value]="trancheHoraire.id">
+                            {{trancheHoraire.debut}}h</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <button type="submit" class="btn btn-success button-primary w-100 mt-3" (click)="submitForm()">Sauvegarder
+                l'annonce</button>
+        </form>
+    </div>
 </div>

@@ -1,0 +1,27 @@
+.form {
+    width: 400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    margin-bottom: 3rem;
+}
+
+input {
+    border: 1px solid var(--sand);
+    width: 300px;
+    margin: 10px 0px;
+}
+
+input:focus {
+    border: 1px solid var(--sand);
+    box-shadow: 0 0 0 0.25rem rgba(242, 208, 164, 0.6)
+}
+
+.button-primary {
+    position: relative;
+    margin-top: 3rem;
+    margin-left: 5rem;
+}

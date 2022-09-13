@@ -1,24 +1,29 @@
-<!-- <div class="dashboard container mt-3">
-    <div class="dashboard__annonces card border-0">
-        <h2 class="text-center mt-3 mb-5">Vos Annonces</h2>
-        <div class="card_body"></div>
-        <table class="table table-striped ms-3 table-hover">
+<div class="dashboard">
+    <h2>Vos Annonces</h2>
+
+    <div class="dashboard__annonces">
+        <table class="table table-striped table-hover text-center">
             <thead>
                 <th>Id</th>
                 <th>Contenu</th>
                 <th>Date de diffusion</th>
             </thead>
-            <tbody>
+            <tbody *ngIf="annonces.length != 0 ">
                 <tr *ngFor="let annonce of annonces">
                     <td class="pb-3">{{annonce.id}}</td>
-                    <td>{{annonce.contenu}}</td>
-                    <td>{{annonce.dateHeureDebut}} / {{annonce.dateHeureFin}}</td>
+                    <td [innerHTML]="annonce.contenu"></td>
+                    <td>{{annonce.dateHeureDebut}}</td>
+
                 </tr>
             </tbody>
-            <h4 *ngIf="annonces === []">Vous n'avez pas encore d'annonces, cliquez sur "Ajouter une annonce" !</h4>
+            <tbody *ngIf="annonces.length === 0 ">
+                <td colspan="3">Vous n'avez pas encore d'annonces, cliquez sur "Ajouter une
+                    annonce" !</td>
+            </tbody>
         </table>
     </div>
-    <button type="button" class="btn btn-success button-primary"><span>+</span>Ajouter une annonce</button>
-</div> -->
 
-<app-ajout-annonce></app-ajout-annonce>
+    <button type="button" class="btn btn-success button-primary" (click)="addAnnonce()"><span>+</span>Ajouter une
+        annonce</button>
+
+</div>

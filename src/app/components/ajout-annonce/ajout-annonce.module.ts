@@ -4,7 +4,7 @@ import { AjoutAnnonceComponent } from './ajout-annonce.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from 'src/app/material.module';
-
+import { EditorModule, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
 
 
 @NgModule({
@@ -15,10 +15,14 @@ import { MaterialModule } from 'src/app/material.module';
     CommonModule,
     ReactiveFormsModule,
     RouterModule,
-    MaterialModule
+    MaterialModule,
+    EditorModule
   ],
   exports: [
     AjoutAnnonceComponent
+  ],
+  providers: [
+    { provide: TINYMCE_SCRIPT_SRC, useValue: 'tinymce/tinymce.min.js' }
   ]
 })
 export class AjoutAnnonceModule { }

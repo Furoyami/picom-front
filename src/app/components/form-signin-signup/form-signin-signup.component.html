@@ -1,4 +1,6 @@
-<div class="container d-flex justify-content-center align-middle mt-5">
+<div class="form">
+    <h2 *ngIf=userState>Créez votre compte Picom</h2>
+    <h2 *ngIf=!userState>Connexion Picom</h2>
     <form class="w-50 " [formGroup]="formSign" (ngSubmit)="submitForm()">
         <div class="form-group mb-2" *ngIf=userState>
             <label for="lastName">Nom</label>
@@ -21,6 +23,7 @@
             <input type="text" class="form-control" id="phone" placeholder="Numero De Téléphone"
                 formControlName="phone">
         </div>
-        <button type="submit">Valider</button>
+        <button type="submit" class="btn btn-success button-primary" *ngIf="userState">Inscription</button>
+        <button type="submit" class="btn btn-success button-primary" *ngIf="!userState">Connexion</button>
     </form>
 </div>
